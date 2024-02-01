@@ -221,5 +221,5 @@ fn test_app_parse_sub_cmd_with_args() {
 	assert str == 'somestring'
 }
 
-fn cmd_exec(cmd Cmd) {
+fn cmd_exec(args Args) {
 }

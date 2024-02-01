@@ -76,5 +76,5 @@ fn test_cmds_new_adds_help() {
 	assert !exists
 }
 
-fn cmd_exec(cmd Cmd) {
+fn cmd_exec(args Args) {
 }

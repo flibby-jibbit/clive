@@ -1,6 +1,6 @@
 module clive
 
-type FnCmdExec = fn (cmd Cmd)
+type FnCmdExec = fn (Args)
 
 @[noinit]
 pub struct Cmd {

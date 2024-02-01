@@ -58,7 +58,7 @@ wins, not the last.
 # `clive.Cmd`
 
 ```
-type FnCmdExec = fn (cmd Cmd)
+type FnCmdExec = fn (Args)
 
 @[noinit]
 pub struct Cmd {
@@ -411,26 +411,26 @@ fn main() {
 	}
 
 	if !isnil(cmd.exec) {
-		cmd.exec(cmd)
+		cmd.exec(cmd.args)
 	}
 }
 
-fn deploy(cmd clive.Cmd) {
+fn deploy(args clive.Args) {
 	// You can get stored values using convenience methods.
 	// Note these methods return `none` if either the arg
 	// does not exist or it has no stored value(s).
-	env := cmd.args.get_string('environment') or { '' }
-	apps := cmd.args.get_strings('application') or { [] }
-	retries := cmd.args.get_int('retries') or { 0 }
+	env := args.get_string('environment') or { '' }
+	apps := args.get_strings('application') or { [] }
+	retries := args.get_int('retries') or { 0 }
 	println('Deploying ${apps.join(',')} to ${env} with ${retries} retries.')
 }
 
-fn check(cmd clive.Cmd) {
+fn check(args clive.Args) {
 	// You can get stored values using convenience methods.
 	// Note these methods return `none` if either the arg
 	// does not exist or it has no stored value(s).
-	env := cmd.args.get_string('environment') or { '' }
-	apps := cmd.args.get_strings('application') or { [] }
+	env := args.get_string('environment') or { '' }
+	apps := args.get_strings('application') or { [] }
 	println('Checking the version of ${apps.join(',')} in ${env}.')
 }
 
