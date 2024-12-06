@@ -1,3 +1,7 @@
+# IMPORTANT
+
+This repository is essentially abandoned. I started using Vlang for a project at work, but later found out I couldn't continue to do so. I then switched to Go. I don't like to use more languages than necessary at one time, so I switched to Go for personal projects as well.
+
 # Description
 
 `clive` is a CLI parsing library for [Vlang](https://vlang.io). It was
